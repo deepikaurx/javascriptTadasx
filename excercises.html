@@ -1,0 +1,301 @@
+<html>
+
+<body>
+
+
+<h4> 1) Create a function accepts a number and outputs its square </h4>
+
+<script>
+	function squareFunction(a) {
+		var x = a * a;
+		document.write(x);
+	}
+
+
+squareFunction(9);
+
+</script>
+
+
+<h4> 2) Create a function that accepts 3 numbers and returns the sum of them. </h4>
+
+<script>
+
+function sumFunction(a, b, c) {
+  var x = a + b + c;
+		document.write(x);
+}
+
+
+sumFunction(1,1,1);
+
+</script>
+
+
+<h4> 3) Create a Person object with three values, name, age, occupation.
+Output the contents of that object, then edit them, and output again.</h4>
+
+<script>
+	var person = {
+		name:"deepi", 
+		age: 25, 
+		occupation:"web"
+	};
+
+	document.writeln(person.name +"<br>");
+	document.writeln(person.age +"<br>");  
+	document.writeln(person.occupation);
+
+	
+
+</script>
+
+
+<h4> 4) Create a button that calls a function when clicked.</h4>
+
+<button onclick="myFunction()">Click me</button>
+<p id="deepi"></p>
+
+<script>
+function myFunction() {
+    document.getElementById("deepi").innerHTML = "Heyyyyyyyyy";
+}
+</script>
+
+
+
+
+<h4> 5)	Create a button that increases the age of your Person object. </h4>
+
+<button onclick="rFunction()">increaseage</button>
+<p id="awais"> </p>
+
+
+<script>
+		var person = {
+		name:"kishan", 
+		age: 22, 
+		occupation:"web"
+	};
+
+
+function rFunction() {
+	  var x = document.getElementById("awais").innerHTML =(person.age ++);
+	  
+}
+
+	</script>
+
+
+
+
+<h4> 6) Create a series of textboxes and buttons that let you create a Person object with
+data from the textboxes, output your Person object, as well as edit your Person
+object.</h4>
+
+
+
+<input type="text" id="nameTxt" placeholder="Enter name">
+<input type="number" id="ageTxt" placeholder="Enter age">
+<input type="text" id="occupationTxt" placeholder="Enter occupation">
+
+<button onclick="userFunction()"> TRY</button>
+
+<p id="a"> </p>
+<p id="b"> </p>
+<p id="c"> </p>
+
+<script>
+	function userFunction() {
+		
+		var userPerson = {
+		name: document.getElementById("nameTxt").value,
+		age: document.getElementById("ageTxt").value,
+		occupation: document.getElementById("occupationTxt").value,
+	}
+
+	 document.getElementById("a").innerHTML =(userPerson.name);
+	 document.getElementById("b").innerHTML =(userPerson.age);
+	 document.getElementById("c").innerHTML =(userPerson.occupation);
+}
+</script>
+
+
+<h4> 7) Create a variable with “ He said “My name is Elliott” ” as the value, and
+display it. Using String Methods, convert this string to uppercase, and display it.</h4> 
+
+
+
+
+<button onclick="strFunction()">Try it</button>
+
+<p id="box"></p>
+
+<script>
+function strFunction() {
+    var str = "he said 'My name is Elliott'";
+    var result = str.toUpperCase();
+    document.getElementById("box").innerHTML = result;
+}
+</script>
+
+
+
+
+<h4>8) Concatenate a String and a Number together, and output the result. </h4>
+
+<button onclick="theFunction()">Try it</button>
+
+<p id="result"></p>
+
+<script>
+function theFunction() {
+    var str1 = "abdi";
+    var intx = 101;
+    var res = str1.concat(intx);
+    document.getElementById("result").innerHTML = res;
+}
+</script>
+
+
+<h4> 9) Create an array with 3 strings inside of it, and output them.
+Then add another string to your array, and output them.
+Then remove the last string from the array, and output them. </h4>
+
+<button onclick="addFunction()">Add Name</button>
+<button onclick="removeFunction()">Remove Name</button>
+
+<p id="names"></p>
+<p id="namesx"></p>
+
+<script>
+var people = ["kishan", "awais", "deepi"];
+document.getElementById("names").innerHTML = people;
+
+function addFunction() {
+	 people.push("sully");
+    document.getElementById("names").innerHTML = people;
+
+}
+
+function removeFunction() {
+    document.getElementById("namesx").innerHTML = people;
+    people.pop();
+}
+</script>
+
+
+<h4> 10) Using conditional statements, create a function that checks if your person object is
+between 20-40 years old, then outputs if that fact is true or not. </h4>
+
+
+
+
+<button onclick="checkFunction()">check</button>
+<p id="try"> </p>
+
+<script>
+function checkFunction() {
+    	var person = {
+		name:"kishan", 
+		age: 22, 
+		occupation:"web"
+	};
+    document.getElementById("try").innerHTML = Boolean(person.age > 20 && person.age < 40);
+}
+</script>
+
+<h4> 11) Create a for loop that increments from 1 to 10, outputting the current iteration at
+each step. </h4>
+
+<p id="test"></p>
+
+<script>
+var text = "";
+var i;
+for (i = 0; i < 10; i++) {
+    text += i + "\n";
+}
+document.getElementById("test").innerHTML = text;
+</script>
+
+
+<h4> 12) Create a conditional statement inside your for loop body, which then checks what
+the current iteration is, if the current iteration is divisible by 2, then it outputs it,
+otherwise it outputs nothing. </h4>
+
+
+
+<p id="check"></p>
+
+<script>
+var text = "";
+var i;
+for (i = 0; i < 10; i++) {
+    if (i%2==0)	
+    text += i + "\n";
+}
+document.getElementById("check").innerHTML = text;
+</script>
+
+
+
+
+
+
+<h4> 13) Create a method that prints the numbers 1 to 100 via a for loop, however if the
+number it’s outputting is divisible by 3 then output “Fizz” instead, if the number
+is divisible by 5 output “Buzz” instead. If the number is divisible by both 3 and 5,
+output “FizzBuzz”
+
+
+Additional – Add 3 additional parameters to your fizz buzz method, one for the
+number it will count up to, one for the word it outputs if its divisible by 3 and one
+for the word it outputs is divisible by 5, then make your application work with these
+parameters instead of hard-coded values.</h4>
+
+<p id="fb"></p>
+
+<script>
+var text = "";
+var i;
+for (i = 0; i < 100; i++) {
+ 	if(i%3==0 && i%5==0)
+ 	text += "FizzBuzz";	
+
+    else if (i%3==0)	
+    text += "fizz";
+
+ 	else if (i%5==0) 
+ 	text += "buzz";
+ 	
+	else
+	text += i + "\n";
+
+}
+document.getElementById("fb").innerHTML = text;
+</script>
+
+
+
+
+
+
+<h4> 14)  Create a method accepts a number then, outputting what it did at each iteration,
+and how many iterations it took to get to the end.
+• If the number is divisible by 3, divide it by 3.
+• If it’s not, either add 1 or subtract 1 (to make it divisible by 3), then divide it by 3.
+• It stops when the number it reaches is 1</h4>
+
+
+
+
+
+
+
+
+<h4> 15)  </h4>
+
+
+</body>
+</html>
